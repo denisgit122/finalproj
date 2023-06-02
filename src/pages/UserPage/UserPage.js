@@ -1,8 +1,17 @@
-impo
+import {Navigate} from "react-router-dom";
+import {useAuth} from "../../hooks/useAuth";
+import {Users} from "../../components";
+
 const UserPage = () => {
-    return (
+    const {isAuth} = useAuth()
+
+    return isAuth ? (
+        <div>
+            <Users/>
+        </div>
+    ) : (
        <div>
-           <Re
+           <Navigate to={'/login'}/>
        </div>
 
     );

@@ -6,6 +6,7 @@ import {Provider} from "react-redux";
 
 import App from './App';
 import {setUpStore} from "./redux";
+import './fireBase'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = setUpStore()

@@ -2,36 +2,33 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 
 let initialState = {
-    login: [],
+    email: null,
+    token:null,
     errors: null,
     loading: null
 };
 const login = createAsyncThunk (
     "userSlice/getById",
-    async (user, thunkAPI)=>{
-        try {
-            const arr = [];
-            arr.push(user)
-
-            return arr
-        }catch (e) {
-            return thunkAPI.rejectWithValue(e.response.data);
-        }
-    }
 );
 
 const authSlice = createSlice({
     name: "authSlice",
     initialState,
-    reducers: {},
-    extraReducers: {
-        [login.fulfilled]: (state, action)=>{
-            state.login = action.payload
+    reducers: {
+        setUser(state, action){
+            state.email = action.payload;
+            state.token = action.payload
         },
+        removeUser(state){
+            state.email = null;
+            state.token = null
+        }
+    },
 
-    }
 })
 const {reducer: authReducer} = authSlice;
+
+export const {setUser, removeUser} = authSlice.actions
 
 const authAction = {
     login

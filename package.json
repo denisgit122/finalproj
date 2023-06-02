@@ -30,7 +30,12 @@
     "react-scripts": "5.0.1",
     "react-star-ratings": "^2.3.0",
     "redux": "^4.2.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "firebase": "9.2.0",
+    "@mui/icons-material": "^5.0.4",
+    "@mui/material": "^5.0.4",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

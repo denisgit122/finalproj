@@ -1,26 +1,29 @@
 import {Route, Routes} from "react-router-dom";
-import {LoginPage} from "./pages";
+
+import {UserPage,AdminPanelPage, LoginPage,NotFoundPage} from "./pages";
 import {HeaderLayots} from "./layouts/HeaderLayots/HeaderLayots";
-import {NotFoundPage} from "./pages/NotFoundPage/NotFoundPage";
+
 
 function App() {
   return (
-    <div className="App">
-        <Routes>
-               <Route path={"/login"} element={<LoginPage/>}>
-                   <Route path={'/login'} element={<LoginPage/>}/>
-               </Route>
+          <div className="App">
+          <Routes>
+              <Route path={"/login"} element={<LoginPage/>}>
+                  <Route path={'/login'} element={<LoginPage/>}/>
+              </Route>
 
-               <Route element={<HeaderLayots/>}>
-                   <Route path={"/"} element={<HeaderLayots/>}/>
-               </Route>
+              <Route element={<HeaderLayots/>}>
+                  <Route path={"/"} element={<UserPage/>}/>
+                  <Route path={"/adminPanel"} element={<AdminPanelPage/>}/>
 
-               <Route path={'*'} element={<NotFoundPage/>}/>
+              </Route>
 
-        </Routes>
+              <Route path={'*'} element={<NotFoundPage/>}/>
+
+          </Routes>
+      </div>
 
 
-    </div>
   );
 }
 
